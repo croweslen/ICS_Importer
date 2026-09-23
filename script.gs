@@ -1,20 +1,10 @@
-/**
- * Gmail .ics -> Google Calendar auto-importer
- *
- * Setup:
- *   1. Go to https://script.google.com -> New project, paste this whole file in.
- *   2. Edit CONFIG below if needed.
- *   3. Select `setup` in the function dropdown and click Run. Approve the permissions.
- *   That's it. It then checks Gmail every CHECK_EVERY_MINUTES minutes.
- */
-
 const CONFIG = {
     // Which emails to scan. To limit to one sender, add e.g. "from:portal@school.org"
     SEARCH_QUERY: 'from:nypdsound@gmail.com has:attachment filename:ics newer_than:14d',
     //SEARCH_QUERY: 'has:attachment filename:ics newer_than:14d',
     CALENDAR_ID: 'primary',          // or a specific calendar's ID from its settings page
     PROCESSED_LABEL: 'Sound-Job-Added', // Gmail label applied once an email is handled
-    CHECK_EVERY_MINUTES: 1,         // must be 1, 5, 10, 15 or 30
+    CHECK_EVERY_MINUTES: 15,         // must be 1, 5, 10, 15 or 30
 };
 
 // Outlook often uses Windows time zone names instead of IANA ones.
